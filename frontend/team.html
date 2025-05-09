@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Meet our expert team of mechanics at Maridadi Auto Parts.">
+  <meta name="google-site-verification" content="64S_w5si7Ee8aQRoPQvVpqZb14l0EhwhpkmlznVqW28">
+  <title>Team of Mechanics - Automobile Spare Part System</title>
+  <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico">
+</head>
+<body>
+  <div id="root"></div>
+
+  <!-- Load scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/react@18.2.0/umd/react.production.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@babel/standalone@7.20.15/babel.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script type="text/babel">
+    const { useState, useEffect } = React;
+
+    // Header Component (Reused from index.html)
+    function Header({ setCurrentPage, isAdmin, newOrderCount }) {
+      return (
+        <header className="bg-gray-800 text-white sticky top-0 z-10">
+          <div className="container mx-auto flex justify-between items-center py-4 px-4">
+            <div className="logo">
+              <a href="index.html">
+                <img src="https://dcassetcdn.com/design_img/2793673/484367/484367_15258317_2793673_cf010444_image.png" alt="Automobile Spare Part System" className="h-12" />
+              </a>
+            </div>
+            <nav className="hidden md:flex space-x-6">
+              <a href="index.html" className="hover:text-gray-300">Home</a>
+              <a href="#" onClick={() => setCurrentPage('shop')} className="hover:text-gray-300">Shop</a>
+              <a href="team.html" className="hover:text-gray-300">Team of Mechanics</a>
+              <a href="distributors.html" className="hover:text-gray-300">Distributors</a>
+              <a href="#" className="hover:text-gray-300">Contact</a>
+              {isAdmin && (
+                <a
+                  href="#"
+                  onClick={() => setCurrentPage('admin')}
+                  className="relative bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded"
+                >
+                  Admin Panel
+                  {newOrderCount > 0 && (
+                    <span className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full px-2 text-xs">{newOrderCount}</span>
+                  )}
+                </a>
+              )}
+            </nav>
+            <div className="flex items-center space-x-4">
+              <div className="text-sm hidden md:block">
+                <p>hi near chennai</p>
+                <p><a href="tel:+12345466778">+12345466778</a></p>
+              </div>
+              <button onClick={() => logout()} className="bg-red-500 hover:bg-red-600 px-4 py-2 rounded hidden md:block">Logout</button>
+              <button className="md:hidden" onClick={() => document.getElementById('mobile-menu').classList.toggle('hidden')}>
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div id="mobile-menu" className="hidden md:hidden bg-gray-700 px-4 py-2">
+            <nav className="flex flex-col space-y-2">
+              <a href="index.html" className="hover:text-gray-300">Home</a>
+              <a href="#" onClick={() => setCurrentPage('shop')} className="hover:text-gray-300">Shop</a>
+              <a href="team.html" className="hover:text-gray-300">Team of Mechanics</a>
+              <a href="distributors.html" className="hover:text-gray-300">Distributors</a>
+              <a href="#" className="hover:text-gray-300">Contact</a>
+              {isAdmin && (
+                <a
+                  href="#"
+                  onClick={() => setCurrentPage('admin')}
+                  className="relative bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded"
+                >
+                  Admin Panel
+                  {newOrderCount > 0 && (
+                    <span className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full px-2 text-xs">{newOrderCount}</span>
+                  )}
+                </a>
+              )}
+              <p className="text-sm">hi near chennai</p>
+              <p className="text-sm"><a href="tel:+12345466778">+12345466778</a></p>
+              <button onClick={() => logout()} className="bg-red-500 hover:bg-red-600 px-4 py-2 rounded w-full text-left">Logout</button>
+            </nav>
+          </div>
+        </header>
+      );
+    }
+
+    // Team Component
+    function Team() {
+      // Sample team data
+      const mechanics = [
+        {
+          id: 1,
+          name: "John Kamau",
+          role: "Lead Mechanic",
+          expertise: ["Engine Repair", "Transmission", "Brake Systems"],
+          image: "https://tse2.mm.bing.net/th/id/OIP.PZsMLTIgXaEsdCA0VjTo7gHaLH?rs=1&pid=ImgDetMain",
+          contact: "mailto:john.kamau@maridadi.com"
+        },
+        {
+          id: 2,
+          name: "Sarah Wanjiru",
+          role: "Suspension Specialist",
+          expertise: ["Suspension Systems", "Alignment", "Tire Services"],
+          image: "https://haircutinspiration.com/wp-content/uploads/Medium-Scissor-Crop-750x1048.jpg",
+          contact: "mailto:sarah.wanjiru@maridadi.com"
+        },
+        {
+          id: 3,
+          name: "Michael Otieno",
+          role: "Electrical Systems Expert",
+          expertise: ["Wiring", "Batteries", "Diagnostics"],
+          image: "https://c.stocksy.com/a/XJC000/z9/47339.jpg",
+          contact: "mailto:michael.otieno@maridadi.com"
+        },
+        {
+          id: 4,
+          name: "Grace Mwende",
+          role: "Bodywork Technician",
+          expertise: ["Dent Repair", "Painting", "Frame Alignment"],
+          image: "https://thumbs.dreamstime.com/b/portrait-black-man-smiling-camera-62747464.jpg",
+          contact: "mailto:grace.mwende@maridadi.com"
+        }
+      ];
+
+      return (
+        <section className="py-16 bg-gray-100">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl font-bold text-center mb-8">Our Expert Mechanics</h2>
+            <p className="text-center text-lg mb-12">
+              Meet our skilled team of mechanics, dedicated to keeping your vehicle in top condition.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {mechanics.map((mechanic) => (
+                <div key={mechanic.id} className="bg-white shadow-md rounded-lg overflow-hidden">
+                  <img
+                    src={mechanic.image}
+                    alt={mechanic.name}
+                    className="w-full h-48 object-cover"
+                  />
+                  <div className="p-4">
+                    <h3 className="text-lg font-semibold">{mechanic.name}</h3>
+                    <p className="text-gray-600">{mechanic.role}</p>
+                    <ul className="mt-2 text-sm text-gray-700">
+                      {mechanic.expertise.map((skill, index) => (
+                        <li key={index} className="list-disc list-inside">{skill}</li>
+                      ))}
+                    </ul>
+                    <a
+                      href={mechanic.contact}
+                      className="mt-4 inline-block bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded"
+                    >
+                      Contact
+                    </a>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      );
+    }
+
+    // Main Team Page Component
+    function TeamPage() {
+      const [isLoggedIn, setIsLoggedIn] = useState(!!sessionStorage.getItem('isLoggedIn'));
+      const [isAdmin, setIsAdmin] = useState(sessionStorage.getItem('isAdmin') === 'true');
+      const [currentPage, setCurrentPage] = useState('team');
+      const [newOrderCount] = useState(0); // Placeholder; actual count would come from main app
+
+      // Redirect to login if not authenticated
+      useEffect(() => {
+        if (!isLoggedIn) {
+          window.location.href = 'index.html';
+        }
+      }, [isLoggedIn]);
+
+      if (!isLoggedIn) {
+        return null; // Render nothing while redirecting
+      }
+
+      return (
+        <div className="min-h-screen flex flex-col">
+          <Header
+            setCurrentPage={setCurrentPage}
+            isAdmin={isAdmin}
+            newOrderCount={newOrderCount}
+          />
+          <Team />
+          <footer className="bg-gray-800 text-white py-8">
+            <div className="container mx-auto px-4 text-center">
+              <p className="mt-2">hi near chennai | <a href="tel:+12345466778">+12345466778</a></p>
+              <a href="https://wa.me/qr/6WXVUMTMIOQYM1" target="_blank" rel="noopener noreferrer" className="inline-block mt-2">
+                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.198-.347.223-.644.075-.297-.148-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.134.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.520-.074-.149-.669-.719-.889-.986-.219-.267-.422-.487-.669-.487-.246 0-.492.074-.689.321-.198.247-.815.925-.985 2.23-.173 1.305.998 2.508 1.146 2.656.149.149 2.094 3.2 5.078 4.487.709.307 1.263.489 1.694.572.431.083.892.057 1.295-.099.39-.149 1.203-.497 1.376-.796.173-.297.173-.647.074-.796-.099-.149-.297-.297-.594-.446zM12 0C5.373 0 0 5.373 0 12c0 2.118.551 4.115 1.508 5.873L0 24l6.282-1.645A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0z" />
+                </svg>
+              </a>
+            </div>
+          </footer>
+        </div>
+      );
+    }
+
+    // Logout Function
+    function logout() {
+      sessionStorage.removeItem('isLoggedIn');
+      sessionStorage.removeItem('isAdmin');
+      window.location.href = 'index.html';
+    }
+
+    // Render Team Page
+    try {
+      ReactDOM.render(<TeamPage />, document.getElementById('root'));
+    } catch (e) {
+      console.error("React render error:", e);
+      document.getElementById('root').innerHTML = `
+        <div style="padding: 20px; color: red;">
+          <h2>Application Error</h2>
+          <p>${e.message}</p>
+          <p>Please check the console for details.</p>
+        </div>
+      `;
+    }
+  </script>
+</body>
+</html>
