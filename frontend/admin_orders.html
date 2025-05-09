@@ -1,0 +1,85 @@
+<?php
+// admin_orders.php
+include 'db_connect.php';
+session_start();
+
+// Check if logged in as admin
+if (!isset($_SESSION['is_admin']) || $_SESSION['is_admin'] != 1) {
+    echo "Access Denied!";
+    exit();
+}
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Panel - Orders</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        h2 {
+            color: #2c3e50;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 15px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+        th {
+            background-color: #34495e;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+
+<h2>All Orders</h2>
+
+<table>
+    <tr>
+        <th>Order ID</th>
+        <th>User</th>
+        <th>Product</th>
+        <th>Quantity</th>
+        <th>Order Date</th>
+        <th>Status</th>
+    </tr>
+
+    <?php
+    $sql = "SELECT orders.*, users.username, spare_parts.name AS product_name 
+            FROM orders 
+            JOIN users ON orders.user_id = users.id 
+            JOIN spare_parts ON orders.product_id = spare_parts.id 
+            ORDER BY order_date DESC";
+
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            echo "<tr>
+                <td>{$row['id']}</td>
+                <td>{$row['username']}</td>
+                <td>{$row['product_name']}</td>
+                <td>{$row['quantity']}</td>
+                <td>{$row['order_date']}</td>
+                <td>{$row['status']}</td>
+            </tr>";
+        }
+    } else {
+        echo "<tr><td colspan='6'>No orders found</td></tr>";
+    }
+    ?>
+</table>
+
+</body>
+</html>
