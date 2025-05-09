@@ -9,13 +9,20 @@ Database: MySQL
 🔐 User Roles
 1. Admin
 Manage spare parts (Add, Edit, Delete)
+
 View and process customer orders
+
 Manage distributor and staff data
+
 View transaction reports
+
 Generate inventory summaries
 
-2. Customer/User
+3. Customer/User
 Register and log in to the system
+
 Browse spare parts
+
 Add items to the cart
+
 Place orders and view order history
