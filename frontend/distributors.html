@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Distributors</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Custom animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .card {
+      animation: fadeIn 0.6s ease-out forwards;
+      animation-delay: calc(var(--i) * 0.2s);
+      opacity: 0;
+    }
+
+    .card:hover {
+      transform: translateY(-5px) scale(1.03);
+      background: linear-gradient(145deg, #f3f4f6, #ffffff);
+    }
+
+    .card img {
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover img {
+      transform: scale(1.1);
+    }
+
+    /* Ensure smooth transitions */
+    .transition-all {
+      transition: all 0.3s ease-in-out;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-900 font-sans">
+
+  <section class="py-16">
+    <div class="mt-12 flex justify-end px-4">
+      <a href="index.html" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-full shadow-lg hover:bg-blue-700 transition-all">
+        ⬅ Back to Shop
+      </a>
+    </div>    
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Our Distributors</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Distributor 1 -->
+        <a href="https://eliteautospares.example.com" target="_blank" class="card bg-white p-6 rounded-xl shadow-lg text-center hover:shadow-2xl transition-all" style="--i: 1">
+          <img src="https://thumbs.dreamstime.com/b/distributor-box-young-distributor-packed-carton-box-document-looking-upwards-standing-modern-building-122455515.jpg" alt="Elite Auto Spares" class="w-28 h-28 mx-auto mb-4 object-contain rounded-full" />
+          <h3 class="text-xl font-semibold text-gray-800">Elite Auto Spares</h3>
+          <p class="text-gray-600 mb-2">Hyderabad</p>
+          <p class="text-sm text-yellow-500">★★★★☆</p>
+          <p class="text-sm text-gray-500">📞 +91 9876543210</p>
+        </a>
+
+        <!-- Distributor 2 -->
+        <a href="https://megapartsdistributors.example.com" target="_blank" class="card bg-white p-6 rounded-xl shadow-lg text-center hover:shadow-2xl transition-all" style="--i: 2">
+          <img src="https://thumbs.dreamstime.com/b/digital-warehouse-organization-man-holding-tablet-277623916.jpg" alt="MegaParts" class="w-28 h-28 mx-auto mb-4 object-contain rounded-full" />
+          <h3 class="text-xl font-semibold text-gray-800">MegaParts Distributors</h3>
+          <p class="text-gray-600 mb-2">Chennai</p>
+          <p class="text-sm text-yellow-500">★★★★☆</p>
+          <p class="text-sm text-gray-500">📞 +91 9123456780</p>
+        </a>
+
+        <!-- Distributor 3 -->
+        <a href="https://turbomotors.example.com" target="_blank" class="card bg-white p-6 rounded-xl shadow-lg text-center hover:shadow-2xl transition-all" style="--i: 3">
+          <img src="https://openskygroup.com/wp-content/uploads/2023/02/Our-Solutions-img.png" alt="Turbo Motors" class="w-28 h-28 mx-auto mb-4 object-contain rounded-full" />
+          <h3 class="text-xl font-semibold text-gray-800">Turbo Motors Supply</h3>
+          <p class="text-gray-600 mb-2">Bangalore</p>
+          <p class="text-sm text-yellow-500">★★★★★</p>
+          <p class="text-sm text-gray-500">📞 +91 9988776655</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
