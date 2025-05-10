@@ -41,7 +41,7 @@ Run the backend server
 
 Open the frontend in a browser
 📷 Screenshots
-https://github.com/user-attachments/assets/d4223cf5-db3c-4b15-981b-48afb6a27ff5
+![image](https://github.com/user-attachments/assets/d4223cf5-db3c-4b15-981b-48afb6a27ff5)
 
 ![image](https://github.com/user-attachments/assets/586b5e8a-bc96-4ca7-b67d-dc246e3e8bfa)
 
