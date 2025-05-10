@@ -43,15 +43,15 @@ Open the frontend in a browser
 📷 Screenshots
 https://github.com/user-attachments/assets/d4223cf5-db3c-4b15-981b-48afb6a27ff5
 
-https://github.com/user-attachments/assets/586b5e8a-bc96-4ca7-b67d-dc246e3e8bfa
+![image](https://github.com/user-attachments/assets/586b5e8a-bc96-4ca7-b67d-dc246e3e8bfa)
 
-https://github.com/user-attachments/assets/2bc2e4de-2841-4324-b6b1-e0552d9d1ec6
+![image](https://github.com/user-attachments/assets/2bc2e4de-2841-4324-b6b1-e0552d9d1ec6)
 
-https://github.com/user-attachments/assets/fd931575-1238-4268-b0c8-4ad37cc49fb2
+![image](https://github.com/user-attachments/assets/fd931575-1238-4268-b0c8-4ad37cc49fb2)
 
-https://github.com/user-attachments/assets/563917d1-0c75-452d-b5fc-d6237604f8df
+![image](https://github.com/user-attachments/assets/563917d1-0c75-452d-b5fc-d6237604f8df)
 
-https://github.com/user-attachments/assets/3c62050d-117b-4a88-9f73-08f0b20b71c0
+![image](https://github.com/user-attachments/assets/3c62050d-117b-4a88-9f73-08f0b20b71c0)
 
 ![image](https://github.com/user-attachments/assets/8e2e98cc-7386-45ac-a294-a516f20f39ac)
 
