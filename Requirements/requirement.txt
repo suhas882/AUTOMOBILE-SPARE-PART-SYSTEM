@@ -1,0 +1,12 @@
+Flask
+Flask-MySQLdb
+Flask-Cors
+Werkzeug
+Jinja2
+itsdangerous
+gunicorn
+requests
+python-dotenv
+flask-bcrypt        # for password hashing
+mysql-connector-python   # alternative MySQL connector
+Pillow              # if you handle images
