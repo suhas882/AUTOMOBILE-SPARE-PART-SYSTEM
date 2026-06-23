@@ -3,7 +3,7 @@ from flask import Flask, send_from_directory, abort, request, redirect, url_for,
 from flask_mysqldb import MySQL
 from werkzeug.security import generate_password_hash, check_password_hash
 
-# Initialize Flask app
+# Initialize Flask ap
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'  # Replace with a strong, random key
 
